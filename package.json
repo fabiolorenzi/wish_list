@@ -4,8 +4,8 @@
   "scripts": {
     "clean": "tsc --build --clean",
     "tsc": "tsc --build -w",
-    "sass": "node-sass --watch styles -o build",
-    "build": "tsc --build && node-sass styles -o build"
+    "sass": "node-sass --watch scripts -o build",
+    "build": "tsc --build && node-sass scripts -o build"
   },
   "repository": {
     "type": "git",
