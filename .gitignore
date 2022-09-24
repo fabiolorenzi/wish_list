@@ -3,3 +3,4 @@ key.key
 .env
 venv/
 node_modules/
+build/
