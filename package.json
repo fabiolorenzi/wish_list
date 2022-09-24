@@ -1,0 +1,24 @@
+{
+  "name": "wish_list",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build && node-sass --watch scss -o css",
+    "clean": "tsc --build --clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiolorenzi/wish_list.git"
+  },
+  "author": "Fabio Lorenzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabiolorenzi/wish_list/issues"
+  },
+  "homepage": "https://github.com/fabiolorenzi/wish_list#readme",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.55.0",
+    "typescript": "^4.8.3"
+  }
+}
