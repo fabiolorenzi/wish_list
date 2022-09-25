@@ -8,6 +8,6 @@ users_app = Blueprint("users_app", __name__)
 
 load_dotenv()
 
-@users_app.route("/", methods = ["GET"])
+@users_app.route("/login", methods = ["GET"])
 def test():
     return "test"
