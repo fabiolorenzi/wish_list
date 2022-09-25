@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, template_rendered
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
@@ -17,6 +17,10 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 ma = Marshmallow(db)
 migrate = Migrate(app, db)
+
+template_render = template_rendered()
+
+import models.user
 
 if __name__ == "__main__":
     app.run(debug=True)
