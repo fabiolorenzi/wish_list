@@ -20,8 +20,10 @@ migrate = Migrate(app, db)
 
 import models.user
 
+from routes.home import home_app
 from routes.users import users_app
 
+app.register_blueprint(home_app)
 app.register_blueprint(users_app)
 
 if __name__ == "__main__":
