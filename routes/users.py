@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, template_rendered
+from flask import Blueprint, jsonify, request, render_template
 from app import db
 from dotenv import load_dotenv
 import os
@@ -10,4 +10,4 @@ load_dotenv()
 
 @users_app.route("/", methods = ["GET"])
 def test():
-    return template_rendered("index.html")
+    return "test"
