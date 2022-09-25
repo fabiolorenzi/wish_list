@@ -1,4 +1,4 @@
-from flask import Flask, template_rendered
+from flask import Flask
 from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
@@ -18,9 +18,11 @@ db = SQLAlchemy(app)
 ma = Marshmallow(db)
 migrate = Migrate(app, db)
 
-template_render = template_rendered()
-
 import models.user
+
+from routes.users import users_app
+
+app.register_blueprint(users_app)
 
 if __name__ == "__main__":
     app.run(debug=True)
