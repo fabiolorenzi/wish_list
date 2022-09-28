@@ -8,7 +8,7 @@ import os
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
 CORS(app)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("TEMPDB")
