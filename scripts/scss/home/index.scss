@@ -4,7 +4,53 @@
     @include page();
     .home_banner {
         display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
         width: 100%;
         background-color: $green;
+        padding: 20px 0;
+        .home_logo {
+            display: block;
+            width: 40%;
+            img {
+                display: block;
+                width: 90%;
+                max-width: 300px;
+                margin: auto;
+            }
+        }
+        .home_bannerRight {
+            display: block;
+            width: 60%;
+            h1 {
+                color: $white;
+                font-size: $gg-font-size;
+                font-weight: 00;
+                margin: 0;
+                padding: 0;
+            }
+            h3 {
+                color: $white;
+                font-size: $lg-font-size;
+                font-weight: 500;
+            }
+            a {
+                color: $black;
+                font-size: $lg-font-size;
+                font-weight: 500;
+                background-color: $yellow;
+                text-decoration: none;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 4px 20px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    color: $white;
+                    background-color: $purple;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
     }
 }
