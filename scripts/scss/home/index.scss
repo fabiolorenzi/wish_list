@@ -9,9 +9,15 @@
         width: 100%;
         background-color: $green;
         padding: 50px 0;
+        @media (max-width: $md-screen) {
+            flex-wrap: wrap;
+        }
         .home_logo {
             display: block;
             width: 40%;
+            @media (max-width: $md-screen) {
+                width: 100%;
+            }
             img {
                 display: block;
                 width: 90%;
@@ -22,12 +28,20 @@
         .home_bannerRight {
             display: block;
             width: 60%;
+            @media (max-width: $md-screen) {
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
             h1 {
                 color: $white;
                 font-size: $gg-font-size;
                 font-weight: 00;
                 margin: 0;
                 padding: 0;
+                @media (max-width: $md-screen) {
+                    font-size: $xxl-font-size;
+                }
             }
             h3 {
                 color: $white;
@@ -101,6 +115,9 @@
                 color: $black;
                 background-color: $yellow;
                 transition-duration: 0.3s;
+            }
+            @media (max-width: $sm-screen) {
+                font-size: $md-font-size;
             }
         }
     }
