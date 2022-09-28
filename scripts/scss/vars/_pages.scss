@@ -1,0 +1,8 @@
+@import "./colours.scss";
+
+@mixin page {
+    display: block;
+    width: 100%;
+    background-color: $white;
+    min-height: calc(100vh - 250px);
+}
