@@ -8,7 +8,7 @@
         align-items: center;
         width: 100%;
         background-color: $green;
-        padding: 20px 0;
+        padding: 50px 0;
         .home_logo {
             display: block;
             width: 40%;
@@ -51,6 +51,37 @@
                     transition-duration: 0.3s;
                 }
             }
+        }
+    }
+    .home_centralSection {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+        p {
+            display: block;
+            color: $black;
+            font-size: $lg-font-size;
+            font-weight: 500;
+        }
+        ul {
+            display: block;
+            width: 100%;
+            li {
+                color: $black;
+                font-size: $md-font-size;
+                font-weight: 600;
+            }
+        }
+    }
+    .home_bottom {
+        display: block;
+        width: 100%;
+        img {
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin: auto;
         }
     }
 }
