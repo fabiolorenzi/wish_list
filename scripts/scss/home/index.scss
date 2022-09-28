@@ -83,5 +83,25 @@
             max-width: 500px;
             margin: auto;
         }
+        a {
+            display: block;
+            width: fit-content;
+            color: $white;
+            font-size: $lg-font-size;
+            font-weight: 500;
+            background-color: $green;
+            text-decoration: none;
+            border: 1px solid $black;
+            border-radius: 4px;
+            padding: 4px 20px;
+            cursor: pointer;
+            margin: 20px auto;
+            transition-duration: 0.3s;
+            &:hover {
+                color: $black;
+                background-color: $yellow;
+                transition-duration: 0.3s;
+            }
+        }
     }
 }
