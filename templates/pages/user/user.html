@@ -7,16 +7,21 @@
     {% from "components/footer.html" import footer %}
     <link rel="stylesheet" type="text/css" href="/static//normalize.css">
     <link rel="stylesheet" type="text/css" href="/static//style.css">
+    <link rel="stylesheet" type="text/css" href="/static//scss/pages/user/login.css">
     <link rel="stylesheet" type="text/css" href="/static//scss/pages/user/user.css">
     <link rel="shortcut icon" href="/static//media/icons/icon.png" />
     <title>Wish List | Login</title>
 </head>
 <body>
     <div class="user">
-        <div class="user_bar"></div>
-        {% block login %}{% endblock %}
-        {{ footer() }}
-        <script src="/static//typescript/user/index.js"></script>
+        <div class="user_title">
+            <h1>Access Page</h1>
+        </div>
+        <div class="user_bar">
+            {%include "pages/user/login.html"  %}
+        </div>
+        <script src="/static//typescript/user/user.js"></script>
     </div>
+    {{ footer() }}
 </body>
 </html>

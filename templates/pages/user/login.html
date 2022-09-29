@@ -1,5 +1,10 @@
-{% extends "user.html" %}
-
-{% block login %}
-<h1>Hello world</h1>
-{% endblock %}
+<div class="login">
+    <form onsubmit="login()">
+        <input type="text" id="username" value="" placeholder="Username" />
+        <input type="password" id="password" value="" placeholder="Password" />
+        <button type="submit">Login</button>
+    </form>
+    <div class="button_area">
+        <button onclick="moveRight()">Create Account</button>
+    </div>
+</div>

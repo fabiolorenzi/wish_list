@@ -2,8 +2,25 @@
 
 .user {
     @include page();
+    margin-bottom: 120px;
+    .user_title {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 100px 0;
+        h1 {
+            color: $black;
+            font-size: $gg-font-size;
+            font-weight: 700;
+            margin: 0;
+            padding: 50px 0;
+        }
+    }
     .user_bar {
         display: flex;
         width: 200%;
+        background-color: $green;
+        box-shadow: 0 10px 30px -10px $black;
+        padding: 50px 0;
     }
 }
