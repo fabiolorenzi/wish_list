@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% from "components/footer.html" import footer %}
     <link rel="stylesheet" type="text/css" href="/static//normalize.css">
     <link rel="stylesheet" type="text/css" href="/static//style.css">
-    <link rel="stylesheet" type="text/css" href="/static//scss/home/index.css">
+    <link rel="stylesheet" type="text/css" href="/static//scss/pages/home/index.css">
     <link rel="shortcut icon" href="/static//media/icons/icon.png">
     <title>Wish List | HomePage</title>
 </head>
@@ -35,6 +36,7 @@
             <img src="/static//media/img/home_image.jpeg" alt="home_bottom" />
             <a href="/login">Login or Create a new account</a>
         </div>
+        {{ footer() }}
     </div>
 </body>
 </html>
