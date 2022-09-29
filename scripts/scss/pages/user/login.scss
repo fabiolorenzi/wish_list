@@ -5,12 +5,17 @@
     justify-content: space-around;
     align-items: center;
     width: 50%;
+    @media (max-width: $md-screen) {
+        display: block;
+    }
     form {
         display: block;
-        width: 350px;
+        width: 80%;
+        max-width: 350px;
         background-color: $black;
         border-radius: 4px;
         padding: 20px;
+        margin: auto;
         input {
             display: block;
             width: 100%;
@@ -32,14 +37,21 @@
     }
     .buttonLogin_area {
         display: block;
-        width: 100px;
+        width: 210px;
+        margin: auto;
+        @media (max-width: $md-screen) {
+            margin: 20px auto 0;
+        }
         button {
+            display: block;
+            width: fit-content;
             background-color: $blue;
             color: $white;
             border: 1px solid $black;
             border-radius: 4px;
             padding: 10px 40px;
             cursor: pointer;
+            margin: auto;
             transition-duration: 0.3s;
             &:hover {
                 background-color: $purple;
