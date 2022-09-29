@@ -10,4 +10,4 @@ load_dotenv()
 
 @users_app.route("/login", methods = ["GET"])
 def test():
-    return render_template("pages/user/index.html")
+    return render_template("pages/user/user.html")

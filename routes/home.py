@@ -4,4 +4,4 @@ home_app = Blueprint("home_app", __name__)
 
 @home_app.route("/", methods = ["GET"])
 def test():
-    return render_template("pages/home/index.html")
+    return render_template("pages/home/home.html")

@@ -1,0 +1,9 @@
+@import "../../vars/_vars.scss";
+
+.user {
+    @include page();
+    .user_bar {
+        display: flex;
+        width: 200%;
+    }
+}
