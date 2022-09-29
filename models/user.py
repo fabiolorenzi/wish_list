@@ -4,10 +4,10 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(20))
     surname = db.Column(db.String(20))
-    email = db.Column(db.String(100))
-    password = db.Column(db.String(20))
-    created_at = db.Column(db.DateTime())
-    edited_at = db.Column(db.DateTime())
+    email = db.Column(db.String(1000))
+    password = db.Column(db.String(1000))
+    created_at = db.Column(db.DateTime)
+    edited_at = db.Column(db.DateTime)
 
     def __init__(self, name, surname, email, password, created_at, edited_at):
         self.name = name

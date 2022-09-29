@@ -2,12 +2,12 @@
     <div class="buttonUser_area" id="topButton">
         <button onclick="moveLeft()">Go Login</button>
     </div>
-    <form onsubmit="createUser()">
-        <input type="text" value="" placeholder="Name" />
-        <input type="text" value="" placeholder="Surname" />
-        <input type="text" value="" placeholder="Email" />
-        <input type="password" value="" placeholder="Password" />
-        <button type="submit">Create User</button>
+    <form>
+        <input type="text" id="nameInput" value="" placeholder="Name" />
+        <input type="text" id="surnameInput" value="" placeholder="Surname" />
+        <input type="text" id="emailInput" value="" placeholder="Email" />
+        <input type="password" id="passwordInput" value="" placeholder="Password" />
+        <button type="submit" onclick="createUser()">Create User</button>
     </form>
     <div class="buttonUser_area" id="bottomButton">
         <button onclick="moveLeft()">Go Login</button>

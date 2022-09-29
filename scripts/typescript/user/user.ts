@@ -1,23 +1,14 @@
-function login() {
-    let username = (document.getElementById("username") as HTMLInputElement)?.value;
+function loginFunc() {
+    var emailLogin = (document.getElementById("emailLogin") as HTMLInputElement)?.value;
     let password = (document.getElementById("password") as HTMLInputElement)?.value;
-    fetch(`${process.env.CLEARDB_DATABASE_URL}/api/login`, {
-        method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({username, password})
-    })
-    .then(resp => resp.json())
-    .then(data => {
-        if (data.email !== "unavailable" && data.password !== "unavailable") {
-            sessionStorage.setItem("user", data.id);
-            sessionStorage.setItem("session", process.env.SESSION);
-            window.location.href = "/dashboard";
-        }
-    })
-    .catch(err => console.log(err));
+    console.log(emailLogin);
+};
+
+function createUser() {
+    let name = (document.getElementById("nameInput") as HTMLInputElement)?.value;
+    let surname = (document.getElementById("surnameInput") as HTMLInputElement)?.value;
+    let email = (document.getElementById("emailInput") as HTMLInputElement)?.value;
+    let password = (document.getElementById("passwordInput") as HTMLInputElement)?.value;
 };
 
 function moveRight(): void {

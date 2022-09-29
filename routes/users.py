@@ -3,7 +3,6 @@ from flask import Blueprint, jsonify, request, render_template
 from app import db
 from tools.security import crypt, decrypt
 from dotenv import load_dotenv
-import os
 import models.user
 
 users_app = Blueprint("users_app", __name__)
@@ -16,17 +15,17 @@ def loginPage():
 
 @users_app.route("/api/user", methods = ["POST"])
 def createUser():
-    name = crypt(request.json["name"])
-    surname = crypt(request.json["surname"])
+    name = request.json["name"]
+    surname = request.json["surname"]
     email = crypt(request.json["email"])
     password = crypt(request.json["password"])
-    created_at = datetime.now
-    edited_at = datetime.now
+    created_at = datetime.now()
+    edited_at = datetime.now()
 
-    newUser = models.User.users(name, surname, email, password, created_at, edited_at)
+    newUser = models.user.Users(name, surname, email, password, created_at, edited_at)
     db.session.add(newUser)
     db.session.commit()
-    return models.User.user_schema.jsonify(newUser), 201
+    return models.user.user_schema.jsonify(newUser), 201
 
 @users_app.route("/api/login", methods = ["POST"])
 def login():
