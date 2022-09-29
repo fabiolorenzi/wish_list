@@ -29,4 +29,12 @@
         top: 40%;
         bottom: 50%;
     }
+    .user_barLeft {
+        left: -100% !important;
+        transition-duration: 1s;
+    }
+    .user_barRight {
+        left: 0 !important;
+        transition-duration: 1s;
+    }
 }
