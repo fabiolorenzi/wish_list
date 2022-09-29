@@ -1,6 +1,6 @@
 from app import db, ma
 
-class User(db.Model):
+class Users(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(20))
     surname = db.Column(db.String(20))
