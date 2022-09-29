@@ -1,10 +1,26 @@
 @import "../../vars/_vars.scss";
 
-.login {
+.createUser {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 50%;
+    .buttonUser_area {
+        display: block;
+        width: 100px;
+        button {
+            background-color: $blue;
+            color: $white;
+            border: 1px solid $black;
+            border-radius: 4px;
+            padding: 10px 40px;
+            transition-duration: 0.3s;
+            &:hover {
+                background-color: $purple;
+                transition-duration: 0.3s;
+            }
+        }
+    }
     form {
         display: block;
         width: 350px;
@@ -26,23 +42,6 @@
             &:hover {
                 background-color: $yellow;
                 color: $black;
-                transition-duration: 0.3s;
-            }
-        }
-    }
-    .buttonLogin_area {
-        display: block;
-        width: 100px;
-        button {
-            background-color: $blue;
-            color: $white;
-            border: 1px solid $black;
-            border-radius: 4px;
-            padding: 10px 40px;
-            cursor: pointer;
-            transition-duration: 0.3s;
-            &:hover {
-                background-color: $purple;
                 transition-duration: 0.3s;
             }
         }
