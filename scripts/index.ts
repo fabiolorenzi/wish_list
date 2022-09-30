@@ -1,35 +1,30 @@
-function permissionCheck(): boolean {
+function permissionCheck(): void {
     let id = sessionStorage.getItem("user_id");
     let email = sessionStorage.getItem("email");
     let passkey = sessionStorage.getItem("passkey");
-    let result: boolean
 
     fetch(`/api/user/${id}`, {
-        method: "POST",
+        method: "GET",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            email: email,
-            password: passkey
-        })
+        }
     })
     .then(resp => resp.json())
-    .then(data => result = data)
-    .catch(err => {
-        console.log(err);
-        result = false;
-    });
-    return result;
+    .then(data => {
+        if (data.email === email && data.password === passkey) {
+            if (window.location.href === "http://127.0.0.1:5000/login") {
+                window.location.href = "/dashboard";
+            };
+        } else {
+            if (window.location.href !== "http://127.0.0.1:5000/login") {
+                window.location.href = "/login";
+            };
+        };
+    })
+    .catch(err => console.log(err));
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (permissionCheck()) {
-        if (window.location.href === "/login") {
-            window.location.href = "/dashboard";
-        };
-    } else {
-        window.location.href = "/login";
-    };
+    permissionCheck();
 });
