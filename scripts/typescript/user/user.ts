@@ -1,8 +1,7 @@
 function loginUser() {
-    console.log(process.env)
     let emailLogin = (document.getElementById("emailLogin") as HTMLInputElement)?.value;
     let password = (document.getElementById("password") as HTMLInputElement)?.value;
-    fetch("http://127.0.0.1:5000/api/login", {
+    fetch("/api/login", {
         method: "POST",
         headers: {
             "Accept": "application/json",
@@ -16,8 +15,9 @@ function loginUser() {
     .then(resp => resp.json())
     .then(data => {
         if (data.email !== "unavailable") {
-            sessionStorage.setItem("user", data.id);
-            //sessionStorage.setItem("passkey", process.env.SESSION);
+            sessionStorage.setItem("user_id", data.id);
+            sessionStorage.setItem("email", data.email);
+            sessionStorage.setItem("passkey", data.password);
             window.location.href = "/dashboard";
         } else {
             alert("Login failed");
@@ -31,7 +31,7 @@ function createUser() {
     let surname = (document.getElementById("surnameInput") as HTMLInputElement)?.value;
     let email = (document.getElementById("emailInput") as HTMLInputElement)?.value;
     let password = (document.getElementById("passwordInput") as HTMLInputElement)?.value;
-    fetch("http://127.0.0.1:5000/api/user", {
+    fetch("/api/user", {
         method: "POST",
         headers: {
             "Accept": "application/json",
