@@ -2,7 +2,10 @@
     <div class="login_form">
         <input type="text" id="emailLogin" value="" placeholder="Email" autocomplete="off" />
         <input type="password" id="password" value="" placeholder="Password" />
-        <button onclick="loginUser()">Login</button>
+        <div class="button_bar">
+            <button class="cancelButton" onclick="cancel()">Cancel</button>
+            <button class="loginButton" onclick="loginUser()">Login</button>
+        </div>
     </div>
     <div class="buttonLogin_area">
         <button onclick="moveRight()">Create Account</button>

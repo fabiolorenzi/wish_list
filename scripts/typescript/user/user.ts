@@ -69,3 +69,7 @@ function moveLeft(): void {
     };
     bar.classList.add("user_barRight");
 };
+
+function cancel(): void {
+    window.location.reload();
+};

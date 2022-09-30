@@ -7,7 +7,10 @@
         <input type="text" id="surnameInput" value="" placeholder="Surname" autocomplete="off" />
         <input type="text" id="emailInput" value="" placeholder="Email" autocomplete="off" />
         <input type="password" id="passwordInput" value="" placeholder="Password" />
-        <button onclick="createUser()">Create User</button>
+        <div class="button_bar">
+            <button class="cancelButton" onclick="cancel()">Cancel</button>
+            <button class="createButton" onclick="createUser()">Create</button>
+        </div>
     </div>
     <div class="buttonUser_area" id="bottomButton">
         <button onclick="moveLeft()">Go Login</button>
