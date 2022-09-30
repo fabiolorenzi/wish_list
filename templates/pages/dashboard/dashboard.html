@@ -7,21 +7,15 @@
     {% from "components/footer.html" import footer %}
     <link rel="stylesheet" type="text/css" href="/static//normalize.css">
     <link rel="stylesheet" type="text/css" href="/static//style.css">
-    <link rel="stylesheet" type="text/css" href="/static//scss/pages/user/user.css">
+    <link rel="stylesheet" type="text/css" href="/static//scss/pages/dashboard/dashboard.css">
     <link rel="shortcut icon" href="/static//media/icons/icon.png" />
-    <title>Wish List | Login</title>
+    <title>Wish List | Dashboard</title>
 </head>
 <body>
-    <div class="user">
-        <div class="user_title">
-            <h1>Access Page</h1>
-        </div>
-        <div class="user_bar" id="user_bar">
-            {% include "pages/user/login.html" %}
-            {% include "pages/user/createUser.html" %}
+    <div class="dashboard">
+        <div class="dashboard_bar">
         </div>
         <script src="/static//index.js"></script>
-        <script src="/static//typescript/user/user.js"></script>
     </div>
     {{ footer() }}
 </body>
