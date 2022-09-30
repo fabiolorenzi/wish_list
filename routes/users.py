@@ -42,3 +42,10 @@ def login():
             userData = models.user.Users.query.get(x["id"])
             return models.user.user_schema.jsonify(userData)
     return {"email": "unavailable", "password": "unavailable"}, 404
+
+@users_app.route("/api/user/<id>", methods = ["POST"])
+def checkPermission(id):
+    email = request.json["email"]
+    password = request.json["passkey"]
+    targetUser = models.user.Users.query.get(id)
+    user = models.user.user_schema.jsonify(targetUser)
