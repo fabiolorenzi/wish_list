@@ -5,6 +5,8 @@
     width: 100%;
     background-color: $black;
     padding: 80px 0;
+    position: relative;
+    z-index: 100;
     a {
         color: $white;
         font-size: $sm-font-size;
