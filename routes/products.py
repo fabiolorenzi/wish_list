@@ -60,3 +60,10 @@ def updateProduct(id):
 
     db.session.commit()
     return models.product.product_schema.jsonify(productTarget)
+
+@products_app.route("/api/products/<id>", methods = ["DELETE"])
+def deleteProduct(id):
+    productTarget = models.product.Products.query.get(id)
+    db.session.delete(productTarget)
+    db.session.commit()
+    return "Product deleted successfully"
