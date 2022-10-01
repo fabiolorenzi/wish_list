@@ -12,7 +12,7 @@ class Products(db.Model):
     taste = db.Column(db.String(1000))
     aroma = db.Column(db.String(1000))
     weight = db.Column(db.String(10))
-    quantity = db.Column(db.String)
+    quantity = db.Column(db.String(5))
     price = db.Column(db.String(20))
 
     def __init__(self, name, category, created_at, updated_at, country, materials, image_url, taste, aroma, weight, quantity, price):
