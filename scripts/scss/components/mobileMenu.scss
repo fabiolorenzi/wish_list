@@ -1,0 +1,43 @@
+@import "../vars/_vars.scss";
+
+.mobileMenu {
+    display: none;
+    width: 200px;
+    min-height: 100vh;
+    background-color: $green;
+    position: absolute;
+    left: -300px;
+    top: 65px;
+    z-index: 10;
+    @media (max-width: $md-screen) {
+        display: block;
+    }
+    .mobileMenu_links {
+        display: block;
+        width: 100%;
+        a {
+            display: block;
+            color: $white;
+            font-size: $lg-font-size;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: left;
+            padding: 15px;
+            transition-duration: 0.3s;
+            &:hover {
+                background-color: $yellow;
+                color: $black;
+                transition-duration: 0.3s;
+            }
+        }
+    }
+}
+
+.mobileMenu_on {
+    left: 0 !important;
+    transition-duration: 1s;
+}
+.mobileMenu_off {
+    left: -300px !important;
+    transition-duration: 1s;
+}

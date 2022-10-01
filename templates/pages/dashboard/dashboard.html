@@ -7,6 +7,7 @@
     {% from "components/footer.html" import footer %}
     {% from "components/header.html" import header %}
     {% from "components/mobileHeader.html" import mobileHeader %}
+    {% from "components/mobileMenu.html" import mobileMenu %}
     <link rel="stylesheet" type="text/css" href="/static//normalize.css">
     <link rel="stylesheet" type="text/css" href="/static//style.css">
     <link rel="stylesheet" type="text/css" href="/static//scss/pages/dashboard/dashboard.css">
@@ -15,6 +16,7 @@
 </head>
 <body>
     {{ mobileHeader() }}
+    {{ mobileMenu() }}
     <div class="dashboard">
         {{ header() }}
         <div class="dashboard_container">

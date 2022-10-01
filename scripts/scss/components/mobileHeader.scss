@@ -4,7 +4,7 @@
     display: none;
     width: 100%;
     background-color: $blue;
-    display: fixed;
+    position: fixed;
     top: 0;
     @media (max-width: $md-screen) {
         display: block;
@@ -12,6 +12,7 @@
     .mobileHeader_button {
         display: block;
         padding: 20px 0 20px 20px;
+        position: relative;
         div {
             display: block;
             width: 40px;
