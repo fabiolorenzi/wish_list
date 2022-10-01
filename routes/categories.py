@@ -15,3 +15,10 @@ def createCategory():
     db.session.add(newCategory)
     db.session.commit()
     return models.category.category_schema.jsonify(newCategory), 201
+
+@categories_app.route("/api/categories/<id>", methods = ["DELETE"])
+def deleteCategory(id):
+    targetCategory = models.category.Categories.query.get(id)
+    db.session.delete(targetCategory)
+    db.session.commit()
+    return "Category removed successfully"
