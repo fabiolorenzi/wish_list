@@ -1,9 +1,14 @@
 {% macro header() %}
 <link rel="stylesheet" type="text/css" href="/static//scss/components/header.css" />
 <div class="header">
-    <a href="/dashboard">Dashboard</a>
-    <a href="/wish-list">Wish List</a>
-    <a href="/reviews">Reviews</a>
-    <a href="/account">Account</a>
+    <div class="header_logo">
+        <img src="/static//media/img/logo.png" alt="wish_list" />
+    </div>
+    <div class="header_links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/wish-list">Wish List</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/account">Account</a>
+    </div>
 </div>
 {% endmacro %}

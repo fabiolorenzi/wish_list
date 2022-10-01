@@ -7,7 +7,36 @@
     background-color: $green;
     position: fixed;
     z-index: 10;
-    a {
+    @media (max-width: $md-screen) {
+        display: none;
+    }
+    .header_logo {
         display: block;
+        width: 100%;
+        img {
+            display: block;
+            width: 90%;
+            margin: auto;
+            padding: 20px 0;
+        }
+    }
+    .header_links {
+        display: block;
+        width: 100%;
+        a {
+            display: block;
+            color: $white;
+            font-size: $lg-font-size;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: left;
+            padding: 15px;
+            transition-duration: 0.3s;
+            &:hover {
+                background-color: $yellow;
+                color: $black;
+                transition-duration: 0.3s;
+            }
+        }
     }
 }

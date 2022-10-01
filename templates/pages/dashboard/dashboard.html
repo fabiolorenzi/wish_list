@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% from "components/footer.html" import footer %}
     {% from "components/header.html" import header %}
+    {% from "components/mobileHeader.html" import mobileHeader %}
     <link rel="stylesheet" type="text/css" href="/static//normalize.css">
     <link rel="stylesheet" type="text/css" href="/static//style.css">
     <link rel="stylesheet" type="text/css" href="/static//scss/pages/dashboard/dashboard.css">
@@ -13,12 +14,14 @@
     <title>Wish List | Dashboard</title>
 </head>
 <body>
+    {{ mobileHeader() }}
     <div class="dashboard">
         {{ header() }}
         <div class="dashboard_container">
         </div>
-        <script src="/static//index.js"></script>
     </div>
     {{ footer() }}
+    <script src="/static//index.js"></script>
+    <script src="/static//typescript/components/mobileMenu.js"></script>
 </body>
 </html>
