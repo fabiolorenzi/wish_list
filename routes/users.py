@@ -1,9 +1,9 @@
-from datetime import datetime
 from flask import Blueprint, jsonify, request, render_template
 from app import db
 from tools.security import crypt, decrypt
 from dotenv import load_dotenv
 import models.user
+from datetime import datetime
 
 users_app = Blueprint("users_app", __name__)
 

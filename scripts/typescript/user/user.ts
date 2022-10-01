@@ -15,9 +15,9 @@ function loginUser() {
     .then(resp => resp.json())
     .then(data => {
         if (data.email !== "unavailable") {
-            sessionStorage.setItem("user_id", data.id);
-            sessionStorage.setItem("email", data.email);
-            sessionStorage.setItem("passkey", data.password);
+            localStorage.setItem("user_id", data.id);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("passkey", data.password);
             window.location.href = "/dashboard";
         } else {
             alert("Login failed");

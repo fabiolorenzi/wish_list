@@ -1,7 +1,7 @@
 function permissionCheck(): void {
-    let id = sessionStorage.getItem("user_id");
-    let email = sessionStorage.getItem("email");
-    let passkey = sessionStorage.getItem("passkey");
+    let id = localStorage.getItem("user_id");
+    let email = localStorage.getItem("email");
+    let passkey = localStorage.getItem("passkey");
 
     fetch(`/api/user/${id}`, {
         method: "GET",
