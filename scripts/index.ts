@@ -14,7 +14,7 @@ function permissionCheck(): void {
     .then(data => {
         if (data.email === email && data.password === passkey) {
             if (window.location.href === "http://127.0.0.1:5000/login") {
-                window.location.href = "/dashboard";
+                window.location.href = `/dashboard?user=${data.id}`;
             };
         } else {
             if (window.location.href !== "http://127.0.0.1:5000/login") {
@@ -23,6 +23,15 @@ function permissionCheck(): void {
         };
     })
     .catch(err => console.log(err));
+};
+
+function securityCheck(): void {
+    let params = new URLSearchParams(window.location.search);
+    console.log(params.get("user"));
+    console.log(localStorage.getItem("user_id"));
+    if (params.get("user") != localStorage.getItem("user_id")) {
+        window.location.href = "/error";
+    };
 };
 
 function setLinks(): void {
@@ -44,6 +53,7 @@ function setLinks(): void {
     wishListLinkMobile.setAttribute("href", `/wish-list?user=${userId}`);
     reviewsLinkMobile.setAttribute("href", `/reviews?user=${userId}`);
     accountLinkMobile.setAttribute("href", `/account?user=${userId}`);
+    securityCheck();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
