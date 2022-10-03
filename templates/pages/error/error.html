@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% from "components/footer.html" import footer %}
+    {% from "components/header.html" import header %}
+    {% from "components/mobileHeader.html" import mobileHeader %}
+    {% from "components/mobileMenu.html" import mobileMenu %}
+    <link rel="stylesheet" type="text/css" href="/static//normalize.css">
+    <link rel="stylesheet" type="text/css" href="/static//style.css">
+    <link rel="stylesheet" type="text/css" href="/static//scss/pages/error/error.css">
+    <link rel="shortcut icon" href="/static//media/icons/icon.png" />
+    <title>Wish List | Error</title>
+</head>
+<body>
+    {{ mobileHeader() }}
+    {{ mobileMenu() }}
+    <div class="error">
+        {{ header() }}
+        <div class="error_title">
+            <h1>404 Error :(</h1>
+            <h3>This page do not exist.</h3>
+        </div>
+    </div>
+    {{ footer() }}
+</body>
+</html>
