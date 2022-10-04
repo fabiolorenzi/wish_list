@@ -14,8 +14,9 @@ class Products(db.Model):
     weight = db.Column(db.String(10))
     quantity = db.Column(db.String(5))
     price = db.Column(db.String(20))
+    created_by = db.Column(db.Integer)
 
-    def __init__(self, name, category, created_at, updated_at, country, materials, image_url, taste, aroma, weight, quantity, price):
+    def __init__(self, name, category, created_at, updated_at, country, materials, image_url, taste, aroma, weight, quantity, price, created_by):
         self.name = name
         self.category = category
         self.created_at = created_at
@@ -28,10 +29,11 @@ class Products(db.Model):
         self.weight = weight
         self.quantity = quantity
         self.price = price
+        self.created_by = created_by
 
 class ProductSchema(ma.Schema):
     class Meta:
-        fields = ("id", "name", "category", "created_at", "updated_at", "country", "materials", "image_url", "taste", "aroma", "weight", "quantity", "price")
+        fields = ("id", "name", "category", "created_at", "updated_at", "country", "materials", "image_url", "taste", "aroma", "weight", "quantity", "price", "created_by")
 
 product_schema = ProductSchema()
 products_schema = ProductSchema(many = True)
