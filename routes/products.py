@@ -8,7 +8,10 @@ products_app = Blueprint("products_app", __name__)
 
 @products_app.route("/wish-list", methods = ["GET"])
 def renderPage():
-    return render_template("pages/wish-list/wish-list.html")
+    user = request.args.get("user", type = int)
+    productsData = models.product.Products.query.filter(models.product.Products.created_by == user).order_by(models.product.Products.name)
+    products = models.product.products_schema.dump(productsData)
+    return render_template("pages/wish-list/wish-list.html", products=products)
 
 @products_app.route("/api/products", methods = ["POST"])
 def createProduct():
@@ -24,8 +27,9 @@ def createProduct():
     weight = request.json["weight"]
     quantity = request.json["quantity"]
     price = request.json["price"]
+    created_by = request.json["created_by"]
 
-    newProduct = models.product.Products(name, category, created_at, updated_at, country, materials, image_url, taste, aroma, weight, quantity, price)
+    newProduct = models.product.Products(name, category, created_at, updated_at, country, materials, image_url, taste, aroma, weight, quantity, price, created_by)
     db.session.add(newProduct)
     db.session.commit()
     return models.product.product_schema.jsonify(newProduct)
