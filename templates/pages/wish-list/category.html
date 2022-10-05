@@ -11,7 +11,7 @@
     <div class="category_bodyClosed" id="{{ 'category_' ~ cat.id }}">
         {% for product in products %}
             {% if product.category == cat.name %}
-                <p>{{ product.name }}</p>
+                {% include "pages/wish-list/product.html" %}
             {% endif %}
         {% endfor %}
     </div>

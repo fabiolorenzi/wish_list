@@ -1,0 +1,87 @@
+@import "../../vars/_vars.scss";
+
+.product {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    .product_header {
+        display: flex;
+        width: 90%;
+        margin: 10px auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        background-color: $blue;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px -10px $black;
+        padding: 10px;
+        .product_title {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            h1 {
+                color: $white;
+                font-size: $lg-font-size;
+                font-weight: 500;
+            }
+        }
+        .product_buttons {
+            display: block;
+            width: 120px;
+            button {
+                display: block;
+                width: 100%;
+                margin: 5px auto;
+            }
+            .product_moveButton {
+                background-color: $green;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 1px 4px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+            .product_updateButton {
+                background-color: $black;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 1px 4px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+            .product_deleteButton {
+                background-color: $purple;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 1px 4px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
+    }
+    .product_bodyOpen {
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+    .product_bodyClosed {
+        display: none;
+    }
+}

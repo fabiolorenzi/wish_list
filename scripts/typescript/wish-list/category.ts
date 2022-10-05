@@ -7,7 +7,7 @@ function deleteCategory(id: number): void {
         }
     })
     .then(() => {
-        alert("Category delete successfully");
+        alert("Category deleted successfully");
         window.location.reload();
     })
     .catch(err => console.log(err));

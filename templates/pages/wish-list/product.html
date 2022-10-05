@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="/static//scss/pages/wish-list/product.css">
+<div class="product">
+    <div class="product_header">
+        <div class="product_title" onclick="openCloseProduct(`{{ 'product_' ~ product.id }}`)">
+            <h1>{{ product.name }}</h1>
+        </div>
+        <div class="product_buttons">
+            <button onclick="deleteProductFromWishList('{{ product.id }}')" class="product_moveButton">Move</button>
+            <button onclick="deleteProductFromWishList('{{ product.id }}')" class="product_updateButton">Update</button>
+            <button onclick="deleteProductFromWishList('{{ product.id }}')" class="product_deleteButton">Delete</button>
+        </div>
+    </div>
+    <div class="product_bodyClosed" id="{{ 'product_' ~ cat.id }}">
+    </div>
+</div>
+<script src="/static//typescript/wish-list/product.js"></script>
