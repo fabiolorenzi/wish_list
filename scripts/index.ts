@@ -27,8 +27,6 @@ function permissionCheck(): void {
 
 function securityCheck(): void {
     let params = new URLSearchParams(window.location.search);
-    console.log(params.get("user"));
-    console.log(localStorage.getItem("user_id"));
     if (params.get("user") != localStorage.getItem("user_id")) {
         window.location.href = "/error";
     };

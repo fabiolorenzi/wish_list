@@ -6,3 +6,11 @@
     background-color: $white;
     min-height: calc(100vh - 250px);
 }
+
+@mixin pageWithMenu {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    background-color: $white;
+    min-height: calc(100vh - 250px);
+}

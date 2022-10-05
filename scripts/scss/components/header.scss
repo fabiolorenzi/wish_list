@@ -2,40 +2,47 @@
 
 .header {
     display: block;
-    width: 200px;
+    min-width: 200px;
     min-height: 100vh;
     background-color: $green;
-    position: fixed;
+    position: relative;
     z-index: 10;
     @media (max-width: $md-screen) {
         display: none;
     }
-    .header_logo {
+    .header_body {
         display: block;
-        width: 100%;
-        img {
+        width: 200px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        .header_logo {
             display: block;
-            width: 90%;
-            margin: auto;
-            padding: 20px 0;
+            width: 100%;
+            img {
+                display: block;
+                width: 90%;
+                margin: auto;
+                padding: 20px 0;
+            }
         }
-    }
-    .header_links {
-        display: block;
-        width: 100%;
-        a {
+        .header_links {
             display: block;
-            color: $white;
-            font-size: $lg-font-size;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: left;
-            padding: 15px;
-            transition-duration: 0.3s;
-            &:hover {
-                background-color: $yellow;
-                color: $black;
+            width: 100%;
+            a {
+                display: block;
+                color: $white;
+                font-size: $lg-font-size;
+                font-weight: 600;
+                text-decoration: none;
+                text-align: left;
+                padding: 15px;
                 transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
             }
         }
     }

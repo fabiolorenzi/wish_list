@@ -1,14 +1,16 @@
 {% macro header() %}
 <link rel="stylesheet" type="text/css" href="/static//scss/components/header.css" />
 <div class="header">
-    <div class="header_logo">
-        <img src="/static//media/img/logo.png" alt="wish_list" />
-    </div>
-    <div class="header_links">
-        <a href="/dashboard" id="dashboard_link">Dashboard</a>
-        <a href="/wish-list" id="wish-list_link">Wish List</a>
-        <a href="/reviews" id="reviews_link">Reviews</a>
-        <a href="/account" id="account_link">Account</a>
+    <div class="header_body">
+        <div class="header_logo">
+            <img src="/static//media/img/logo.png" alt="wish_list" />
+        </div>
+        <div class="header_links">
+            <a href="/dashboard" id="dashboard_link">Dashboard</a>
+            <a href="/wish-list" id="wish-list_link">Wish List</a>
+            <a href="/reviews" id="reviews_link">Reviews</a>
+            <a href="/account" id="account_link">Account</a>
+        </div>
     </div>
 </div>
 {% endmacro %}
