@@ -1,0 +1,54 @@
+@import "../../vars/_vars.scss";
+
+.createProductForm {
+    display: block;
+    width: 100%;
+    .createProductForm_bodyClosed {
+        display: none;
+    }
+    .createProductForm_bodyOpen {
+        display: block;
+        width: 90%;
+        margin: 20px auto;
+        .createProductForm_input {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px auto;
+            label {
+                display: block;
+                width: fit-content;
+                color: $black;
+                font-size: $md-font-size;
+                font-weight: 500;
+            }
+            input {
+                display: block;
+                width: 60%;
+            }
+            select {
+                display: block;
+                width: fit-content
+            }
+        }
+        .createProductForm_button {
+            display: block;
+            width: 100%;
+            button {
+                background-color: $green;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 10px 40px;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
+    }
+}

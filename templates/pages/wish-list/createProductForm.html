@@ -1,0 +1,53 @@
+<link rel="stylesheet" type="text/css" href="/static//scss/pages/wish-list/createProductForm.css">
+<div class="createProductForm">
+    <div class="createProductForm_bodyClosed" id="productForm">
+        <div class="createProductForm_input">
+            <label>Name</label>
+            <input type="text" id="createProductName" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Category</label>
+            <select id="createProductCategory">
+                {% for x in categories %}
+                    <option value="{{ x.name }}">{{ x.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="createProductForm_input">
+            <label>Country</label>
+            <input type="text" id="createProductCountry" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Materials</label>
+            <input type="text" id="createProductMaterials" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Image Url</label>
+            <input type="text" id="createProductImageUrl" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Taste</label>
+            <input type="text" id="createProductTaste" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Aroma</label>
+            <input type="text" id="createProductAroma" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Weight</label>
+            <input type="text" id="createProductWeight" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Quantity</label>
+            <input type="number" id="createProductQuantity" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_input">
+            <label>Price</label>
+            <input type="text" id="createProductPrice" value="" autocomplete="off" />
+        </div>
+        <div class="createProductForm_button">
+            <button onclick="createProductInWishList()">Create</button>
+        </div>
+    </div>
+</div>
+<script src="/static//typescript/wish-list/createProductForm.js"></script>

@@ -1,18 +1,3 @@
-function deleteProductFromWishList(id: number): void {
-    fetch(`/api/products/${id}`, {
-        method: "DELETE",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        }
-    })
-    .then(() => {
-        alert("Product deleted successfully");
-        window.location.reload();
-    })
-    .catch(err => console.log(err));
-};
-
 let productOpen = false;
 
 function openCloseProduct(targetId: string): void {
@@ -61,6 +46,21 @@ function updateProductInWishList(id: number): void {
     })
     .then(() => {
         alert("Product updated successfully");
+        window.location.reload();
+    })
+    .catch(err => console.log(err));
+};
+
+function deleteProductFromWishList(id: number): void {
+    fetch(`/api/products/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    })
+    .then(() => {
+        alert("Product deleted successfully");
         window.location.reload();
     })
     .catch(err => console.log(err));
