@@ -13,6 +13,13 @@ load_dotenv()
 def loginPage():
     return render_template("pages/user/user.html")
 
+@users_app.route("/account", methods = ["GET"])
+def accountPage():
+    user_id = request.args.get("user", type = int)
+    targetUserData = models.user.Users.query.get(user_id)
+    targetUser = models.user.user_schema.jsonify(targetUserData)
+    return render_template("pages/account/account.html", userData=targetUser)
+
 @users_app.route("/api/user", methods = ["POST"])
 def createUser():
     name = request.json["name"]
