@@ -23,6 +23,9 @@
             display: block;
             width: 230px;
             padding: 7px 0;
+            @media (max-width: $sm-screen) {
+                width: 180px;
+            }
         }
         .createButton {
             background-color: $green;
