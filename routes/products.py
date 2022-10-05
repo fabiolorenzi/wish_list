@@ -9,9 +9,11 @@ products_app = Blueprint("products_app", __name__)
 @products_app.route("/wish-list", methods = ["GET"])
 def renderPage():
     user = request.args.get("user", type = int)
+    categoriesData = models.category.Categories.query.filter(models.category.Categories.created_by == user).order_by(models.category.Categories.name)
+    categories = models.category.categories_schema.dump(categoriesData)
     productsData = models.product.Products.query.filter(models.product.Products.created_by == user).order_by(models.product.Products.name)
     products = models.product.products_schema.dump(productsData)
-    return render_template("pages/wish-list/wish-list.html", products=products)
+    return render_template("pages/wish-list/wish-list.html", categories=categories, products=products)
 
 @products_app.route("/api/products", methods = ["POST"])
 def createProduct():
