@@ -18,7 +18,7 @@ function loginUser() {
             localStorage.setItem("user_id", data.id);
             localStorage.setItem("email", data.email);
             localStorage.setItem("passkey", data.password);
-            window.location.href = "/dashboard";
+            window.location.reload();
         } else {
             alert("Login failed");
         };

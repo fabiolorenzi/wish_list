@@ -34,13 +34,14 @@
                 </div>
             </div>
             <div class="account_buttons">
-                <button class="account_logoutButton">Logout</button>
-                <button class="account_deleteButton">Delete</button>
+                <button class="account_logoutButton" onclick="logout()">Logout</button>
+                <button class="account_deleteButton" onclick="deleteAccount()">Delete</button>
             </div>
         </div>
     </div>
     {{ footer() }}
     <script src="/static//index.js"></script>
+    <script src="/static//typescript/account/account.js"></script>
     <script src="/static//typescript/components/mobileMenu.js"></script>
 </body>
 </html>
