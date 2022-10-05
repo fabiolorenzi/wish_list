@@ -11,15 +11,62 @@
         </div>
     </div>
     <div class="product_bodyClosed" id="{{ 'product_' ~ product.id }}">
-        <input type="text" id="productName" value="{{ product.name }}" placeholder="Name" autocomplete="off" />
-        <input type="text" id="productCountry" value="" placeholder="Country" autocomplete="off" />
-        <input type="text" id="productMaterials" value="" placeholder="Materials" autocomplete="off" />
-        <input type="text" id="productImageUrl" value="" placeholder="Image Url" autocomplete="off" />
-        <input type="text" id="productTaste" value="" placeholder="Taste" autocomplete="off" />
-        <input type="text" id="productAroma" value="" placeholder="Aroma" autocomplete="off" />
-        <input type="text" id="productWeight" value="" placeholder="Weight" autocomplete="off" />
-        <input type="number" id="productQuantity" value="" placeholder="Quantity" autocomplete="off" />
-        <input type="text" id="productPrice" value="" placeholder="Price" autocomplete="off" />
+        <div class="product_input">
+            <label>Name</label>
+            <input type="text" id="productName" value="{{ product.name }}" autocomplete="off" />
+        </div>
+        <div class="product_input">
+            <label>Category</label>
+            <select id="productCategory">
+                {% for x in categories %}
+                    <option
+                        value="{{ x.name }}"
+                        {% if x.name == product.category %}
+                        selected
+                        {% endif %}
+                    >
+                        {{ x.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="product_input">
+            <label>Country</label>
+            <input type="text" id="productCountry" value="{{ product.country }}" autocomplete="off" />
+        </div>
+        <div class="product_input">
+            <label>Materials</label>
+            <input type="text" id="productMaterials" value="{{ product.materials }}" autocomplete="off" />
+        </div>
+        <div class="product_imageInput">
+            <div class="product_input">
+                <label>Image Url</label>
+                <input type="text" id="productImageUrl" value="{{ product.image_url }}" autocomplete="off" />
+            </div>
+            <div class="product_image">
+                <img src="{{ product.image_url }}" alt="product" />
+            </div>
+        </div>
+        <div class="product_input">
+            <label>Taste</label>
+            <input type="text" id="productTaste" value="{{ product.taste }}" autocomplete="off" />
+        </div>
+        <div class="product_input">
+            <label>Aroma</label>
+            <input type="text" id="productAroma" value="{{ product.aroma }}" autocomplete="off" />
+        </div>
+        <div class="product_input">
+            <label>Weight</label>
+            <input type="text" id="productWeight" value="{{ product.weight }}" autocomplete="off" />
+        </div>
+        <div class="product_input">
+            <label>Quantity</label>
+            <input type="number" id="productQuantity" value="{{ product.quantity }}" autocomplete="off" />
+        </div>
+        <div class="product_input">
+            <label>Price</label>
+            <input type="text" id="productPrice" value="{{ product.price }}" autocomplete="off" />
+        </div>
     </div>
 </div>
 <script src="/static//typescript/wish-list/product.js"></script>
