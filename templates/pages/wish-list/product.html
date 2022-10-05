@@ -10,7 +10,16 @@
             <button onclick="deleteProductFromWishList('{{ product.id }}')" class="product_deleteButton">Delete</button>
         </div>
     </div>
-    <div class="product_bodyClosed" id="{{ 'product_' ~ cat.id }}">
+    <div class="product_bodyClosed" id="{{ 'product_' ~ product.id }}">
+        <input type="text" id="productName" value="{{ product.name }}" placeholder="Name" autocomplete="off" />
+        <input type="text" id="productCountry" value="" placeholder="Country" autocomplete="off" />
+        <input type="text" id="productMaterials" value="" placeholder="Materials" autocomplete="off" />
+        <input type="text" id="productImageUrl" value="" placeholder="Image Url" autocomplete="off" />
+        <input type="text" id="productTaste" value="" placeholder="Taste" autocomplete="off" />
+        <input type="text" id="productAroma" value="" placeholder="Aroma" autocomplete="off" />
+        <input type="text" id="productWeight" value="" placeholder="Weight" autocomplete="off" />
+        <input type="number" id="productQuantity" value="" placeholder="Quantity" autocomplete="off" />
+        <input type="text" id="productPrice" value="" placeholder="Price" autocomplete="off" />
     </div>
 </div>
 <script src="/static//typescript/wish-list/product.js"></script>

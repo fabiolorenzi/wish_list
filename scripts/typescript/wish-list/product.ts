@@ -17,7 +17,7 @@ let productOpen = false;
 
 function openCloseProduct(targetId: string): void {
     let product = document.getElementById(targetId);
-  productOpen = !productOpen;
+    productOpen = !productOpen;
     if (productOpen) {
         product.classList.add("product_bodyOpen");
         product.classList.remove("product_bodyClosed");
