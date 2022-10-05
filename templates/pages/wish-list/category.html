@@ -1,12 +1,19 @@
 <link rel="stylesheet" type="text/css" href="/static//scss/pages/wish-list/category.css">
 <div class="category">
     <div class="category_header">
-        <div class="category_title">
+        <div class="category_title" onclick="openCloseCategory(`{{ 'category_' ~ cat.id }}`)">
             <h1>{{ cat.name }}</h1>
         </div>
         <div class="category_buttons">
             <button onclick="deleteCategory('{{ cat.id }}')">Delete</button>
         </div>
+    </div>
+    <div class="category_bodyClosed" id="{{ 'category_' ~ cat.id }}">
+        {% for product in products %}
+            {% if product.category == cat.name %}
+                <p>{{ product.name }}</p>
+            {% endif %}
+        {% endfor %}
     </div>
 </div>
 <script src="/static//typescript/wish-list/category.js"></script>

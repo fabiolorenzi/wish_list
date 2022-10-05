@@ -3,9 +3,6 @@
 .category {
     display: block;
     width: 100%;
-    background-color: $green;
-    border-radius: 2px;
-    box-shadow: 0 10px 30px -10px $black;
     margin-bottom: 20px;
     .category_header {
         display: flex;
@@ -13,6 +10,9 @@
         margin: auto;
         flex-wrap: nowrap;
         align-items: center;
+        background-color: $green;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px -10px $black;
         padding: 10px;
         .category_title {
             display: block;
@@ -41,5 +41,13 @@
                 }
             }
         }
+    }
+    .category_bodyOpen {
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+    .category_bodyClosed {
+        display: none;
     }
 }
