@@ -27,6 +27,11 @@
                 {% include "pages/wish-list/createCategoryBar.html" %}
                 {% include "pages/wish-list/createProductBar.html" %}
             </div>
+            <div class="wish-list_list">
+                {% for cat in categories %}
+                    {% include "pages/wish-list/category.html" %}
+                {% endfor %}
+            </div>
         </div>
     </div>
     {{ footer() }}
