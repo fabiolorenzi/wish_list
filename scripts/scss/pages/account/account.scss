@@ -21,5 +21,56 @@
                 }
             }
         }
+        .account_data {
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            .account_line {
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+                h1 {
+                    color: $black;
+                    font-size: $lg-font-size;
+                    font-weight: 500;
+                }
+            }
+        }
+        .account_buttons {
+            display: flex;
+            width: 350px;
+            margin: auto;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            .account_logoutButton {
+                background-color: $purple;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 10px 40px;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+            .account_deleteButton {
+                background-color: $green;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 10px 40px;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
     }
 }

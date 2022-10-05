@@ -15,10 +15,10 @@ def loginPage():
 
 @users_app.route("/account", methods = ["GET"])
 def accountPage():
-    user_id = request.args.get("user", type = int)
-    targetUserData = models.user.Users.query.get(user_id)
-    targetUser = models.user.user_schema.jsonify(targetUserData)
-    return render_template("pages/account/account.html", userData=targetUser)
+    id = request.args.get("user", type = int)
+    targetUserData = models.user.Users.query.filter(models.user.Users.id == id)
+    user = models.user.users_schema.dump(targetUserData)
+    return render_template("pages/account/account.html", user=user)
 
 @users_app.route("/api/user", methods = ["POST"])
 def createUser():
@@ -33,6 +33,14 @@ def createUser():
     db.session.add(newUser)
     db.session.commit()
     return models.user.user_schema.jsonify(newUser), 201
+
+@users_app.route("/api/user/<id>", methods = ["DELETE"])
+def deleteUser(id):
+    targetUser = models.user.Users.query.get(id)
+    
+    db.session.delete(targetUser)
+    db.session.commit()
+    return "User deleted successfully"
 
 @users_app.route("/api/login", methods = ["POST"])
 def login():
