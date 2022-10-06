@@ -6,8 +6,8 @@
         </div>
     </div>
     <div class="category_bodyClosed" id="{{ 'category_' ~ cat.id }}">
-        {% for product in products %}
-            {% if product.category == cat.name %}
+        {% for review in reviews %}
+            {% if review.category == cat.name %}
                 {% include "pages/reviews/review.html" %}
             {% endif %}
         {% endfor %}

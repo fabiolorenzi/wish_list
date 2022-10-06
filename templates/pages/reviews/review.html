@@ -1,0 +1,76 @@
+<link rel="stylesheet" type="text/css" href="/static//scss/pages/reviews/review.css">
+<div class="review">
+    <div class="review_header">
+        <div class="review_title" onclick="openCloseReview(`{{ 'review_' ~ review.id }}`)">
+            <h1>{{ review.name }}</h1>
+        </div>
+        <div class="review_buttons">
+            <button onclick="deleteProductFromWishList('{{ review.id }}')" class="review_copyButton">Copy</button>
+            <button onclick="updateProductInWishList('{{ review.id }}')" class="review_updateButton">Update</button>
+            <button onclick="deleteProductFromWishList('{{ review.id }}')" class="review_deleteButton">Delete</button>
+        </div>
+    </div>
+    <div class="review_bodyClosed" id="{{ 'review_' ~ review.id }}">
+        <div class="review_input">
+            <label>Name</label>
+            <input type="text" id="reviewName" value="{{ review.name }}" autocomplete="off" />
+        </div>
+        <div class="review_input">
+            <label>Category</label>
+            <select id="reviewCategory">
+                {% for x in categories %}
+                    <option
+                        value="{{ x.name }}"
+                        {% if x.name == review.category %}
+                        selected
+                        {% endif %}
+                    >
+                        {{ x.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="review_input">
+            <label>Country</label>
+            <input type="text" id="reviewCountry" value="{{ review.country }}" autocomplete="off" />
+        </div>
+        <div class="review_input">
+            <label>Materials</label>
+            <input type="text" id="reviewMaterials" value="{{ review.materials }}" autocomplete="off" />
+        </div>
+        <div class=review_imageInput">
+            <div class="review_input">
+                <label>Image Url</label>
+                <input type="text" id="reviewImageUrl" value="{{ review.image_url }}" autocomplete="off" />
+            </div>
+            <div class="review_image">
+                <img src="{{ review.image_url }}" alt="review" />
+            </div>
+        </div>
+        <div class="review_input">
+            <label>Taste</label>
+            <input type="text" id="reviewTaste" value="{{ review.taste }}" autocomplete="off" />
+        </div>
+        <div class="review_input">
+            <label>Aroma</label>
+            <input type="text" id="reviewAroma" value="{{ review.aroma }}" autocomplete="off" />
+        </div>
+        <div class="review_input">
+            <label>Weight</label>
+            <input type="text" id="reviewWeight" value="{{ review.weight }}" autocomplete="off" />
+        </div>
+        <div class="review_input">
+            <label>Price</label>
+            <input type="text" id="reviewPrice" value="{{ review.price }}" autocomplete="off" />
+        </div>
+        <div class="review_input">
+            <label>Note</label>
+            <textarea id="reviewNote">{{ review.note }}</textarea>
+        </div>
+        <div class="review_input">
+            <label>Vote</label>
+            <input type="number" id="reviewPrice" min="0" max="5" value="{{ review.vote }}" autocomplete="off" />
+        </div>
+    </div>
+</div>
+<script src="/static//typescript/reviews/review.js"></script>

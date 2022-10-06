@@ -1,6 +1,6 @@
 let reviewOpen = false;
 
-function openCloseProduct(targetId: string): void {
+function openCloseReview(targetId: string): void {
     let review = document.getElementById(targetId);
     reviewOpen = !reviewOpen;
     if (productOpen) {

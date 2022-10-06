@@ -1,0 +1,129 @@
+@import "../../vars/_vars.scss";
+
+.review {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    .review_header {
+        display: flex;
+        width: 90%;
+        margin: 10px auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        background-color: $blue;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px -10px $black;
+        padding: 10px;
+        .review_title {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            h1 {
+                color: $white;
+                font-size: $lg-font-size;
+                font-weight: 500;
+            }
+        }
+        .review_buttons {
+            display: block;
+            width: 120px;
+            button {
+                display: block;
+                width: 100%;
+                margin: 5px auto;
+            }
+            .review_copyButton {
+                background-color: $green;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 1px 4px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+            .review_updateButton {
+                background-color: $black;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 1px 4px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+            .review_deleteButton {
+                background-color: $purple;
+                color: $white;
+                border: 1px solid $black;
+                border-radius: 4px;
+                padding: 1px 4px;
+                cursor: pointer;
+                transition-duration: 0.3s;
+                &:hover {
+                    background-color: $yellow;
+                    color: $black;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
+    }
+    .review_bodyOpen {
+        display: block;
+        width: 90%;
+        margin: auto;
+        .review_input {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px auto;
+            label {
+                display: block;
+                width: fit-content;
+                color: $black;
+                font-size: $md-font-size;
+                font-weight: 500;
+            }
+            input {
+                display: block;
+                width: 60%;
+            }
+            textarea {
+                display: block;
+                width: 60%;
+                resize: vertical;
+            }
+            select {
+                display: block;
+                width: fit-content
+            }
+        }
+        .review_imageInput {
+            display: block;
+            width: 100%;
+            .product_image {
+                display: block;
+                width: 100%;
+                img {
+                    display: block;
+                    width: 90%;
+                    max-width: 450px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+    .review_bodyClosed {
+        display: none;
+    }
+}
