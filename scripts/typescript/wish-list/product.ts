@@ -50,7 +50,7 @@ function moveProductToReviews(id: number): void {
         alert("Review added successfully");
     })
     .then(() => deleteProductFromWishList(id))
-    .then(() => window.location.href = `/reviews/${localStorage.getItem("user_id")}`)
+    .then(() => window.location.href = `/reviews?user=${localStorage.getItem("user_id")}`)
     .catch(err => console.log(err));
 };
 
