@@ -13,16 +13,16 @@ function openCloseProduct(targetId: string): void {
 };
 
 function moveProductToReviews(id: number): void {
-    let name = (document.getElementById("productName") as HTMLInputElement)?.value;
-    let category = (document.getElementById("productCategory") as HTMLInputElement)?.value;
-    let country = (document.getElementById("productCountry") as HTMLInputElement)?.value;
-    let materials = (document.getElementById("productMaterials") as HTMLInputElement)?.value;
-    let image_url = (document.getElementById("productImageUrl") as HTMLInputElement)?.value;
-    let taste = (document.getElementById("productTaste") as HTMLInputElement)?.value;
-    let aroma = (document.getElementById("productAroma") as HTMLInputElement)?.value;
-    let weight = (document.getElementById("productWeight") as HTMLInputElement)?.value;
-    let quantity = (document.getElementById("productQuantity") as HTMLInputElement)?.value;
-    let price = (document.getElementById("productPrice") as HTMLInputElement)?.value;
+    let name = (document.getElementById("productName" + id) as HTMLInputElement)?.value;
+    let category = (document.getElementById("productCategory" + id) as HTMLInputElement)?.value;
+    let country = (document.getElementById("productCountry" + id) as HTMLInputElement)?.value;
+    let materials = (document.getElementById("productMaterials" + id) as HTMLInputElement)?.value;
+    let image_url = (document.getElementById("productImageUrl" + id) as HTMLInputElement)?.value;
+    let taste = (document.getElementById("productTaste" + id) as HTMLInputElement)?.value;
+    let aroma = (document.getElementById("productAroma" + id) as HTMLInputElement)?.value;
+    let weight = (document.getElementById("productWeight" + id) as HTMLInputElement)?.value;
+    let quantity = (document.getElementById("productQuantity" + id) as HTMLInputElement)?.value;
+    let price = (document.getElementById("productPrice" + id) as HTMLInputElement)?.value;
 
     fetch(`/api/reviews`, {
         method: "POST",
@@ -55,16 +55,16 @@ function moveProductToReviews(id: number): void {
 };
 
 function updateProductInWishList(id: number): void {
-    let name = (document.getElementById("productName") as HTMLInputElement)?.value;
-    let category = (document.getElementById("productCategory") as HTMLInputElement)?.value;
-    let country = (document.getElementById("productCountry") as HTMLInputElement)?.value;
-    let materials = (document.getElementById("productMaterials") as HTMLInputElement)?.value;
-    let image_url = (document.getElementById("productImageUrl") as HTMLInputElement)?.value;
-    let taste = (document.getElementById("productTaste") as HTMLInputElement)?.value;
-    let aroma = (document.getElementById("productAroma") as HTMLInputElement)?.value;
-    let weight = (document.getElementById("productWeight") as HTMLInputElement)?.value;
-    let quantity = (document.getElementById("productQuantity") as HTMLInputElement)?.value;
-    let price = (document.getElementById("productPrice") as HTMLInputElement)?.value;
+    let name = (document.getElementById("productName" + id) as HTMLInputElement)?.value;
+    let category = (document.getElementById("productCategory" + id) as HTMLInputElement)?.value;
+    let country = (document.getElementById("productCountry" + id) as HTMLInputElement)?.value;
+    let materials = (document.getElementById("productMaterials" + id) as HTMLInputElement)?.value;
+    let image_url = (document.getElementById("productImageUrl" + id) as HTMLInputElement)?.value;
+    let taste = (document.getElementById("productTaste" + id) as HTMLInputElement)?.value;
+    let aroma = (document.getElementById("productAroma" + id) as HTMLInputElement)?.value;
+    let weight = (document.getElementById("productWeight" + id) as HTMLInputElement)?.value;
+    let quantity = (document.getElementById("productQuantity" + id) as HTMLInputElement)?.value;
+    let price = (document.getElementById("productPrice" + id) as HTMLInputElement)?.value;
 
     fetch(`/api/products/${id}`, {
         method: "PUT",
@@ -88,8 +88,8 @@ function updateProductInWishList(id: number): void {
     })
     .then(() => {
         alert("Product updated successfully");
-        window.location.reload();
     })
+    .then(() => window.location.reload())
     .catch(err => console.log(err));
 };
 
