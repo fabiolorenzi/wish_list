@@ -29,6 +29,7 @@ from routes.dashboard import dashboard_app
 from routes.categories import categories_app
 from routes.products import products_app
 from routes.error import error_app
+from routes.reviewedProducts import reviewedProducts_app
 
 app.register_blueprint(home_app)
 app.register_blueprint(users_app)
@@ -36,6 +37,7 @@ app.register_blueprint(dashboard_app)
 app.register_blueprint(categories_app)
 app.register_blueprint(products_app)
 app.register_blueprint(error_app)
+app.register_blueprint(reviewedProducts_app)
 
 if __name__ == "__main__":
     app.run(debug=True)

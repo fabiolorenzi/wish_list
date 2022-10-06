@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% from "components/footer.html" import footer %}
+    {% from "components/header.html" import header %}
+    {% from "components/mobileHeader.html" import mobileHeader %}
+    {% from "components/mobileMenu.html" import mobileMenu %}
+    <link rel="stylesheet" type="text/css" href="/static//normalize.css">
+    <link rel="stylesheet" type="text/css" href="/static//style.css">
+    <link rel="stylesheet" type="text/css" href="/static//scss/pages/reviews/reviews.css">
+    <link rel="shortcut icon" href="/static//media/icons/icon.png" />
+    <title>Wish List | Your Reviews</title>
+</head>
+<body>
+    {{ mobileHeader() }}
+    {{ mobileMenu() }}
+    <div class="reviews">
+        {{ header() }}
+        <div class="reviews_container">
+            <div class="reviews_title">
+                <h1>Reviews</h1>
+            </div>
+            <div class="reviews_list">
+
+            </div>
+        </div>
+    </div>
+    {{ footer() }}
+    <script src="/static//index.js"></script>
+    <script src="/static//typescript/components/mobileMenu.js"></script>
+</body>
+</html>

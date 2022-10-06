@@ -1,0 +1,30 @@
+@import "../../vars/_vars.scss";
+
+.reviews {
+    @include pageWithMenu();
+    .reviews_container {
+        display: block;
+        width: 100%;
+        .reviews_title {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 100px 0 0;
+            h1 {
+                color: $black;
+                font-size: $gg-font-size;
+                font-weight: 700;
+                margin: 0;
+                padding: 50px 0;
+                @media (max-width: $sm-screen) {
+                    font-size: $xxl-font-size;
+                }
+            }
+        }
+        .reviews_list {
+            display: block;
+            width: 95%;
+            margin: 20px auto;
+        }
+    }
+}

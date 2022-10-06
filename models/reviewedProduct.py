@@ -38,4 +38,4 @@ class ReviewedProductSchema(ma.Schema):
         fields = ("id", "name", "category", "created_at", "updated_at", "country", "materials", "image_url", "taste", "aroma", "weight", "price", "note", "vote", "created_by")
 
 reviewedProduct_schema = ReviewedProductSchema()
-reviewedPproducts_schema = ReviewedProductSchema(many = True)
+reviewedProducts_schema = ReviewedProductSchema(many = True)
