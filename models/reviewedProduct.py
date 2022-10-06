@@ -13,7 +13,7 @@ class ReviewedProducts(db.Model):
     aroma = db.Column(db.String(1000))
     weight = db.Column(db.String(10))
     price = db.Column(db.String(20))
-    note = db.Column(db.string(10000))
+    note = db.Column(db.String(10000))
     vote = db.Column(db.Integer)
     created_by = db.Column(db.Integer)
 

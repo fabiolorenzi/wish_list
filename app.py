@@ -21,6 +21,7 @@ migrate = Migrate(app, db)
 import models.user
 import models.category
 import models.product
+import models.reviewedProduct
 
 from routes.home import home_app
 from routes.users import users_app
