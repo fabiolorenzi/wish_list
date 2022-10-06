@@ -5,7 +5,7 @@
             <h1>{{ review.name }}</h1>
         </div>
         <div class="review_buttons">
-            <button onclick="deleteProductFromWishList('{{ review.id }}')" class="review_copyButton">Copy</button>
+            <button onclick="copyReviewToWishList('{{ review.id }}')" class="review_copyButton">Copy</button>
             <button onclick="updateReview('{{ review.id }}')" class="review_updateButton">Update</button>
             <button onclick="deleteReview('{{ review.id }}')" class="review_deleteButton">Delete</button>
         </div>
