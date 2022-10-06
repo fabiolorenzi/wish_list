@@ -13,11 +13,11 @@ function permissionCheck(): void {
     .then(resp => resp.json())
     .then(data => {
         if (data.email === email && data.password === passkey) {
-            if (window.location.href.includes("/login")) {
+            if (window.location.href === "https://wishlist-flask.herokuapp.com/login") {
                 window.location.href = `/dashboard?user=${data.id}`;
             };
         } else {
-            if (window.location.href.includes("/login")) {
+            if (window.location.href !== "https://wishlist-flask.herokuapp.com/login") {
                 window.location.href = "/login";
             };
         };
