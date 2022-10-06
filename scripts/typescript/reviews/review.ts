@@ -13,17 +13,17 @@ function openCloseReview(targetId: string): void {
 };
 
 function updateReview(id: number): void {
-    let name = (document.getElementById("reviewName") as HTMLInputElement)?.value;
-    let category = (document.getElementById("reviewCategory") as HTMLInputElement)?.value;
-    let country = (document.getElementById("reviewCountry") as HTMLInputElement)?.value;
-    let materials = (document.getElementById("reviewMaterials") as HTMLInputElement)?.value;
-    let image_url = (document.getElementById("reviewImageUrl") as HTMLInputElement)?.value;
-    let taste = (document.getElementById("reviewTaste") as HTMLInputElement)?.value;
-    let aroma = (document.getElementById("reviewAroma") as HTMLInputElement)?.value;
-    let weight = (document.getElementById("reviewWeight") as HTMLInputElement)?.value;
-    let price = (document.getElementById("reviewPrice") as HTMLInputElement)?.value;
-    let note = (document.getElementById("reviewNote") as HTMLInputElement)?.value;
-    let vote = (document.getElementById("reviewVote") as HTMLInputElement)?.value;
+    let name = (document.getElementById("reviewName" + id) as HTMLInputElement)?.value;
+    let category = (document.getElementById("reviewCategory" + id) as HTMLInputElement)?.value;
+    let country = (document.getElementById("reviewCountry" + id) as HTMLInputElement)?.value;
+    let materials = (document.getElementById("reviewMaterials" + id) as HTMLInputElement)?.value;
+    let image_url = (document.getElementById("reviewImageUrl" + id) as HTMLInputElement)?.value;
+    let taste = (document.getElementById("reviewTaste" + id) as HTMLInputElement)?.value;
+    let aroma = (document.getElementById("reviewAroma" + id) as HTMLInputElement)?.value;
+    let weight = (document.getElementById("reviewWeight" + id) as HTMLInputElement)?.value;
+    let price = (document.getElementById("reviewPrice" + id) as HTMLInputElement)?.value;
+    let note = (document.getElementById("reviewNote" + id) as HTMLInputElement)?.value;
+    let vote = (document.getElementById("reviewVote" + id) as HTMLInputElement)?.value;
 
     fetch(`/api/reviews/${id}`, {
         method: "PUT",
