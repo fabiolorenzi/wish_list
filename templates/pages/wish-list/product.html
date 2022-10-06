@@ -5,7 +5,7 @@
             <h1>{{ product.name }}</h1>
         </div>
         <div class="product_buttons">
-            <button onclick="deleteProductFromWishList('{{ product.id }}')" class="product_moveButton">Move</button>
+            <button onclick="moveProductToReviews('{{ product.id }}')" class="product_moveButton">Move</button>
             <button onclick="updateProductInWishList('{{ product.id }}')" class="product_updateButton">Update</button>
             <button onclick="deleteProductFromWishList('{{ product.id }}')" class="product_deleteButton">Delete</button>
         </div>

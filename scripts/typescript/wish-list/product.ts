@@ -12,6 +12,48 @@ function openCloseProduct(targetId: string): void {
     };
 };
 
+function moveProductToReviews(id: number): void {
+    let name = (document.getElementById("productName") as HTMLInputElement)?.value;
+    let category = (document.getElementById("productCategory") as HTMLInputElement)?.value;
+    let country = (document.getElementById("productCountry") as HTMLInputElement)?.value;
+    let materials = (document.getElementById("productMaterials") as HTMLInputElement)?.value;
+    let image_url = (document.getElementById("productImageUrl") as HTMLInputElement)?.value;
+    let taste = (document.getElementById("productTaste") as HTMLInputElement)?.value;
+    let aroma = (document.getElementById("productAroma") as HTMLInputElement)?.value;
+    let weight = (document.getElementById("productWeight") as HTMLInputElement)?.value;
+    let quantity = (document.getElementById("productQuantity") as HTMLInputElement)?.value;
+    let price = (document.getElementById("productPrice") as HTMLInputElement)?.value;
+
+    fetch(`/api/reviews`, {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            category: category,
+            country: country,
+            materials: materials,
+            image_url: image_url,
+            taste: taste,
+            aroma: aroma,
+            weight: weight,
+            quantity: quantity,
+            price: price,
+            note: "",
+            vote: 0,
+            created_by: localStorage.getItem("user_id")
+        })
+    })
+    .then(() => {
+        alert("Review added successfully");
+        deleteProductFromWishList(id)
+    })
+    .then(() => window.location.reload())
+    .catch(err => console.log(err));
+};
+
 function updateProductInWishList(id: number): void {
     let name = (document.getElementById("productName") as HTMLInputElement)?.value;
     let category = (document.getElementById("productCategory") as HTMLInputElement)?.value;
