@@ -6,18 +6,18 @@
         </div>
         <div class="review_buttons">
             <button onclick="deleteProductFromWishList('{{ review.id }}')" class="review_copyButton">Copy</button>
-            <button onclick="updateProductInWishList('{{ review.id }}')" class="review_updateButton">Update</button>
-            <button onclick="deleteProductFromWishList('{{ review.id }}')" class="review_deleteButton">Delete</button>
+            <button onclick="updateReview('{{ review.id }}')" class="review_updateButton">Update</button>
+            <button onclick="deleteReview('{{ review.id }}')" class="review_deleteButton">Delete</button>
         </div>
     </div>
     <div class="review_bodyClosed" id="{{ 'review_' ~ review.id }}">
         <div class="review_input">
             <label>Name</label>
-            <input type="text" id="reviewName" value="{{ review.name }}" autocomplete="off" />
+            <input type="text" id="reviewName{{ review.id }}" value="{{ review.name }}" autocomplete="off" />
         </div>
         <div class="review_input">
             <label>Category</label>
-            <select id="reviewCategory">
+            <select id="reviewCategory{{ review.id }}">
                 {% for x in categories %}
                     <option
                         value="{{ x.name }}"
@@ -38,7 +38,7 @@
             <label>Materials</label>
             <input type="text" id="reviewMaterials{{ review.id }}" value="{{ review.materials }}" autocomplete="off" />
         </div>
-        <div class=review_imageInput">
+        <div class="review_imageInput">
             <div class="review_input">
                 <label>Image Url</label>
                 <input type="text" id="reviewImageUrl{{ review.id }}" value="{{ review.image_url }}" autocomplete="off" />
@@ -69,7 +69,7 @@
         </div>
         <div class="review_input">
             <label>Vote</label>
-            <input type="number" id="reviewPrice{{ review.id }}" min="0" max="5" value="{{ review.vote }}" autocomplete="off" />
+            <input type="number" id="reviewVote{{ review.id }}" min="0" max="5" value="{{ review.vote }}" autocomplete="off" />
         </div>
     </div>
 </div>

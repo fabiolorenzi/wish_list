@@ -3,7 +3,7 @@ let reviewOpen = false;
 function openCloseReview(targetId: string): void {
     let review = document.getElementById(targetId);
     reviewOpen = !reviewOpen;
-    if (productOpen) {
+    if (reviewOpen) {
         review.classList.add("review_bodyOpen");
         review.classList.remove("review_bodyClosed");
     } else {
@@ -22,7 +22,7 @@ function updateReview(id: number): void {
     let aroma = (document.getElementById("reviewAroma" + id) as HTMLInputElement)?.value;
     let weight = (document.getElementById("reviewWeight" + id) as HTMLInputElement)?.value;
     let price = (document.getElementById("reviewPrice" + id) as HTMLInputElement)?.value;
-    let note = (document.getElementById("reviewNote" + id) as HTMLInputElement)?.value;
+    let note = (document.getElementById("reviewNote" + id) as HTMLTextAreaElement)?.value;
     let vote = (document.getElementById("reviewVote" + id) as HTMLInputElement)?.value;
 
     fetch(`/api/reviews/${id}`, {

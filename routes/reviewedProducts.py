@@ -38,3 +38,43 @@ def createReview():
     db.session.add(newReview)
     db.session.commit()
     return models.reviewedProduct.reviewedProduct_schema.jsonify(newReview)
+
+@reviewedProducts_app.route("/api/reviews/<id>", methods = ["PUT"])
+def updateReview(id):
+    name = request.json["name"]
+    category = request.json["category"]
+    updated_at = datetime.now()
+    country = request.json["country"]
+    materials = request.json["materials"]
+    image_url = request.json["image_url"]
+    taste = request.json["taste"]
+    aroma = request.json["aroma"]
+    weight = request.json["weight"]
+    price = request.json["price"]
+    note = request.json["note"]
+    vote = request.json["vote"]
+
+    reviewTarget = models.reviewedProduct.ReviewedProducts.query.get(id)
+
+    reviewTarget.name = name or reviewTarget.name
+    reviewTarget.category = category or reviewTarget.category
+    reviewTarget.update_at = updated_at
+    reviewTarget.country = country or reviewTarget.country
+    reviewTarget.materials = materials or reviewTarget.materials
+    reviewTarget.image_url = image_url or reviewTarget.image_url
+    reviewTarget.taste = taste or reviewTarget.taste
+    reviewTarget.aroma = aroma or reviewTarget.aroma
+    reviewTarget.weight = weight or reviewTarget.weight
+    reviewTarget.price = price or reviewTarget.price
+    reviewTarget.note = note or reviewTarget.note
+    reviewTarget.vote = vote or reviewTarget.vote
+
+    db.session.commit()
+    return models.reviewedProduct.reviewedProduct_schema.jsonify(reviewTarget)
+
+@reviewedProducts_app.route("/api/reviews/<id>", methods = ["DELETE"])
+def deleteReview(id):
+    targetReview = models.reviewedProduct.ReviewedProducts.query.get(id)
+    db.session.delete(targetReview)
+    db.session.commit()
+    return "Review deleted successfully"
