@@ -48,9 +48,9 @@ function moveProductToReviews(id: number): void {
     })
     .then(() => {
         alert("Review added successfully");
-        deleteProductFromWishList(id)
     })
-    .then(() => window.location.reload())
+    .then(() => deleteProductFromWishList(id))
+    .then(() => window.location.href = `/reviews/${localStorage.getItem("user_id")}`)
     .catch(err => console.log(err));
 };
 
