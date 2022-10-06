@@ -1,0 +1,16 @@
+<link rel="stylesheet" type="text/css" href="/static//scss/pages/reviews/category.css">
+<div class="category">
+    <div class="category_header">
+        <div class="category_title" onclick="openCloseCategoryReview(`{{ 'category_' ~ cat.id }}`)">
+            <h1>{{ cat.name }}</h1>
+        </div>
+    </div>
+    <div class="category_bodyClosed" id="{{ 'category_' ~ cat.id }}">
+        {% for product in products %}
+            {% if product.category == cat.name %}
+                {% include "pages/reviews/review.html" %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<script src="/static//typescript/reviews/category.js"></script>

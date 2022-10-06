@@ -1,0 +1,36 @@
+@import "../../vars/_vars.scss";
+
+.category {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    .category_header {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        flex-wrap: nowrap;
+        align-items: center;
+        background-color: $blue;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px -10px $black;
+        padding: 10px;
+        .category_title {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            h1 {
+                color: $white;
+                font-size: $lg-font-size;
+                font-weight: 500;
+            }
+        }
+    }
+    .category_bodyOpen {
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
+    .category_bodyClosed {
+        display: none;
+    }
+}
