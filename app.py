@@ -3,15 +3,12 @@ from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from dotenv import load_dotenv
 import os
-
-load_dotenv()
 
 app = Flask(__name__, static_url_path="/static")
 CORS(app)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("CLEARDB_DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("WISHLIST_DB")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
